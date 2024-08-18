@@ -120,6 +120,8 @@
         </div>
       </div>
 
+      <List :blogPosts="blogPosts"/>
+
       <!-- Footer -->
       <footer class="bg-light text-center py-4 mt-5">
         <p>&copy; 2024 My Blog. All Rights Reserved.</p>
@@ -133,9 +135,19 @@
 </template>
 
 <script>
+import List from './components/List.vue'
+import Data from "./assets/blog.js";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    List,
+  },
+  data() {
+    return {
+        blogPosts: Data,
+    }
+  }
 };
 </script>
 
